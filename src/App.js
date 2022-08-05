@@ -2,13 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 
+import Article from './components/Article';
+
 function App() {
 
   const [articles, setArticles] = useState([]);
   const [subreddit, setSubreddit] = useState('webdev')
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/webdev.json").then(res => {
+    fetch("https://www.reddit.com/r/Notion.json").then(res => {
       if (res.status != 200) {
         console.log("ERROR!")
         return;
@@ -16,7 +18,7 @@ function App() {
 
       res.json().then(data => {
         if (data != null) {
-          console.log(data);
+          setArticles(data.data.children);
         }
       });
     })
@@ -29,7 +31,10 @@ function App() {
         <input type="text" className="input" value="default"></input>
       </header>
       <div className="articles">
-
+        {/* <Article /> */}
+        {
+        (articles != null) ? articles.map( (article, index) => <Article key={index} article={article.data} />) : ''
+        }
       </div>
     </div>
   );
