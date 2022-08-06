@@ -10,7 +10,7 @@ function App() {
   const [subreddit, setSubreddit] = useState('webdev')
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/Notion.json").then(res => {
+    fetch("https://www.reddit.com/r/"+ subreddit +".json").then(res => {
       if (res.status != 200) {
         console.log("ERROR!")
         return;
@@ -28,7 +28,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <input type="text" className="input" value="default"></input>
+        <input type="text" className="input" value={subreddit} onChange={e => setSubreddit(e.target.value)}></input>
       </header>
       <div className="articles">
         {/* <Article /> */}
