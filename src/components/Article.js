@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Comment from './Comment';
+import Comments from './Comments';
 
 function Article(props) {
     return (
         <article>
             <a href={ "https://reddit.com" + props.article.permalink } target="_blank" >
                 <h3>{ props.article.title }</h3>
-                <Comment link={ props.article.permalink }/>
+                <Comments link={ props.article.permalink }/>
             </a>
         </article>
     );

@@ -31,7 +31,6 @@ function App() {
         <input type="text" className="input" value={subreddit} onChange={e => setSubreddit(e.target.value)}></input>
       </header>
       <div className="articles">
-        {/* <Article /> */}
         {
         (articles != null) ? articles.map( (article, index) => <Article key={index} article={article.data} />) : ''
         }
