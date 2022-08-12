@@ -12,7 +12,7 @@ function Comments(props) {
     let c1 = [];
 
     const commentsLink = props.link.substring(0, props.link.length - 1);
-    functionHandler(comments.length);
+    // functionHandler(comments.length);
 
     useEffect(() => {
       fetch("https://www.reddit.com" + commentsLink + ".json").then(res => {
@@ -37,14 +37,14 @@ function Comments(props) {
             }
 
             setComments(c1);
-            // functionHandler(comments.length);
+            functionHandler(comments.length);
 
           }
         });
 
       })
 
-    }, []);
+    }, [comments]);
 
     return (
       <div className="comments">

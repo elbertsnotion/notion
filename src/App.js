@@ -7,7 +7,7 @@ import Article from './components/Article';
 function App() {
 
   const [articles, setArticles] = useState([]);
-  const [subreddit, setSubreddit] = useState('webdev')
+  const [subreddit, setSubreddit] = useState('notion')
 
   useEffect(() => {
     fetch("https://www.reddit.com/r/"+ subreddit +".json").then(res => {
