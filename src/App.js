@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 
@@ -7,7 +6,7 @@ import Article from './components/Article';
 function App() {
 
   const [articles, setArticles] = useState([]);
-  const [subreddit, setSubreddit] = useState('notion')
+  const [subreddit, setSubreddit] = useState('cryptocurrency')
 
   useEffect(() => {
     fetch("https://www.reddit.com/r/"+ subreddit +".json").then(res => {
