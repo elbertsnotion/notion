@@ -46,7 +46,7 @@ header:before {
     color: #212121;
 }
 
-.articles article:nth-child(2n) {
+.articles article{
     background-color: #F3F3F3;
 }
 
